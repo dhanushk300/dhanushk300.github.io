@@ -3,92 +3,131 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f0f2f5;
+    background: linear-gradient(135deg, #f0f2f5, #d9e2ec);
     color: #333;
     text-align: center;
+    overflow-x: hidden;
 }
 
 /* Header */
 header {
-    background: linear-gradient(90deg, #4b6cb7, #182848);
+    background: linear-gradient(135deg, #4b6cb7, #182848);
     color: white;
-    padding: 80px 20px;
+    padding: 100px 20px;
+    position: relative;
+    overflow: hidden;
 }
 
 header h1 {
     font-size: 3em;
     margin: 0;
+    position: relative;
+    z-index: 1;
 }
 
 header p {
     font-size: 1.2em;
     margin-top: 10px;
+    position: relative;
+    z-index: 1;
+}
+
+/* Decorative Circles in Header */
+header::before, header::after {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.2;
+    z-index: 0;
+}
+
+header::before {
+    width: 300px;
+    height: 300px;
+    background: #ffffff;
+    top: -50px;
+    left: -50px;
+}
+
+header::after {
+    width: 400px;
+    height: 400px;
+    background: #ffffff;
+    bottom: -100px;
+    right: -100px;
 }
 
 /* Resume Section */
 .resume-section {
-    max-width: 600px;
+    max-width: 650px;
     margin: 60px auto;
     background-color: #fff;
-    padding: 40px 20px;
-    border-radius: 15px;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    padding: 50px 25px;
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+    position: relative;
+    overflow: hidden;
 }
 
 .resume-section h2 {
     font-size: 2em;
     color: #182848;
+    margin-bottom: 15px;
 }
 
 .resume-section p {
     font-size: 1.1em;
-    margin: 20px 0;
+    margin-bottom: 30px;
 }
 
+/* Resume Button with Hover Animation */
 a.button {
     display: inline-block;
-    padding: 18px 35px;
-    background-color: #4b6cb7;
+    padding: 20px 40px;
+    background: linear-gradient(90deg, #4b6cb7, #182848);
     color: white;
-    font-size: 1.2em;
-    border-radius: 12px;
-    transition: background 0.3s ease;
+    font-size: 1.3em;
+    border-radius: 15px;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    text-decoration: none;
 }
 
 a.button:hover {
-    background-color: #182848;
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.3);
 }
 
 /* Footer */
 footer {
-    background-color: #182848;
+    background: linear-gradient(135deg, #182848, #4b6cb7);
     color: white;
-    padding: 20px;
+    padding: 25px 20px;
     margin-top: 80px;
 }
 
 footer a {
     color: #ffffff;
     text-decoration: none;
-    margin: 0 10px;
+    margin: 0 12px;
     transition: color 0.3s ease;
 }
 
 footer a:hover {
-    color: #4b6cb7;
+    color: #f0f2f5;
 }
 
-/* Responsive */
+/* Responsive Design */
 @media (max-width: 768px) {
     header h1 {
         font-size: 2.2em;
     }
     .resume-section {
-        margin: 30px 20px;
-        padding: 30px 15px;
+        margin: 40px 15px;
+        padding: 35px 15px;
     }
     a.button {
-        font-size: 1em;
-        padding: 15px 25px;
+        font-size: 1.1em;
+        padding: 15px 30px;
     }
 }
